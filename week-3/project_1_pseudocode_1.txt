@@ -1,0 +1,15 @@
+BEGIN
+
+WHILE payment_not_confirmed
+ if payment >= total_price THEN
+   payment_not_confirmed = false 
+ endif
+endwhile
+
+update product_stock(deduct purchase product)
+
+GENERATE receipt
+
+print receipt
+
+end
